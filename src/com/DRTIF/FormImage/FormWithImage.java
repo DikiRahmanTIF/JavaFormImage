@@ -41,6 +41,8 @@ public class FormWithImage {
                 user.setBank(bank);
                 user.setNamaPemilik(namaPemilik);
 
+                textArea1.setText("");
+
                 String result = String.format("Nomor Kartu : %s\nJenis ATM : %s\nNama Bank : %s\nNama Pemilik : %s\nFile Gambar : %s",noKartu, jenisATM, bank, namaPemilik, imageFileName);
                 textArea1.append(result);
                 try {
@@ -59,7 +61,7 @@ public class FormWithImage {
                 JFileChooser jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
                 jfc.setDialogTitle("Select an image");
                 jfc.setAcceptAllFileFilterUsed(false);
-                FileNameExtensionFilter filter = new FileNameExtensionFilter("PNG and JPEG images", "png", "jpeg");
+                FileNameExtensionFilter filter = new FileNameExtensionFilter("PNG and JPEG images", "png", "jpeg", "jpg");
                 jfc.addChoosableFileFilter(filter);
 
                 int choosenAct = jfc.showSaveDialog(null);
