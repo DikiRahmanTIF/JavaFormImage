@@ -43,7 +43,7 @@ public class FormWithImage {
 
                 textArea1.setText("");
 
-                String result = String.format("Nomor Kartu : %s\nJenis ATM : %s\nNama Bank : %s\nNama Pemilik : %s\nFile Gambar : %s",noKartu, jenisATM, bank, namaPemilik, imageFileName);
+                String result = String.format("\nNomor Kartu : %s\nJenis ATM : %s\nNama Bank : %s\nNama Pemilik : %s\nFile Gambar : %s",noKartu, jenisATM, bank, namaPemilik, imageFileName);
                 textArea1.append(result);
                 try {
                     FileWriter fw = new FileWriter("src/Data.txt",true);
@@ -69,13 +69,13 @@ public class FormWithImage {
                     imageFileName = jfc.getSelectedFile().getName();
 
                     // Mendisplay sebuah Image
-                    previewimage.setBounds(6, 30, 300, 300);
+                    previewimage.setBounds(6, 30, 400, 400);
                     previewimage.setIcon(new ImageIcon(jfc.getSelectedFile().getAbsolutePath()));
                     previewimage.setText("");
 
                     // Menyimpan Sebuah Image
                     String pathsrc = jfc.getSelectedFile().getAbsolutePath();
-                    String destsrc = System.getProperty("user.dir") + "/src/Image/" + jfc.getSelectedFile().getName();
+                    String destsrc = System.getProperty("user.dir") + "/src/ImageDbs/" + jfc.getSelectedFile().getName();
 
                     File src = new File(pathsrc);
                     File dest = new File(destsrc);
